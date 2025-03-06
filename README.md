@@ -47,7 +47,22 @@ npm install # installs all dependencies
 ```
 npm run dev # start app in development mode
 ```
+> [!WARNING]
+> We recommend running app in development mode (as shown before) to test it out. This makes sure that you not get corrupted copy of repo.
+
+> [!TIP]
+> ViteJS is supporting HMR (hot module replacement). This means, if you do some changes to code, it will automaticlly reload app.
 4. To finish playing around, just close app.
 5. Next, you need to choose your build target. It can be Linux, Windows or MacOS
 > [!NOTE]
 > Electron is supported to build cross-platform build (e.g. You building Windows build from Linux), but it can be broken. You may search on Internet how to solve this issue. But we recomend not doing cross-platform build at all.
+6. Next, you may run command to build your app (depending on your OS). The list of commands are here:
++ `npm run build:win` for building on Windows
++ `npm run build:mac` for building on MacOS
++ `npm run build:mac_icon` for building on MacOS (with app icon)
++ `npm run build:linux` for building on Linux
+Feel free to explore `package.json` file.
+
+# License
+Copyright (©) Myroslav Maikovskiy, 2025.
+See details in LICENSE file.
