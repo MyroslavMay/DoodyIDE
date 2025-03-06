@@ -60,7 +60,7 @@ npm run dev # start app in development mode
 + `npm run build:win` for building on Windows
 + `npm run build:mac` for building on MacOS
 + `npm run build:mac_icon` for building on MacOS (with app icon)
-+ `npm run build:linux` for building on Linux
++ `npm run build:linux` for building on Linux <br />
 Feel free to explore `package.json` file.
 
 # License
