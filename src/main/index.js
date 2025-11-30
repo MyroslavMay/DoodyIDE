@@ -11,11 +11,14 @@ function createWindow() {
     autoHideMenuBar: true,
     // ...(process.platform === 'linux' ? { icon } : {}),
     // icon: join(app.getAppPath(), 'build/icon.png'),
-    icon: (process.platform === 'linux') ? join(app.getAppPath(), 'build/icon.png') : join(app.getAppPath(), 'build/icon.ico'),
+    icon:
+      process.platform === 'linux'
+        ? join(app.getAppPath(), 'build/icon.png')
+        : join(app.getAppPath(), 'build/icon.ico'),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false,
-      accessibleTitle: "DoodyIDE"
+      accessibleTitle: 'DoodyIDE'
     }
   })
 
