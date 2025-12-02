@@ -6,23 +6,23 @@ import { LANGS_SPIPPETS } from '../constants'
 import Output from './Output'
 
 const CodeEditor = () => {
-  const editorRef = useRef()
+  const editorRef = useRef<any>(null)
   const [value, setValue] = useState('')
-  const [lang, setLang] = useState('javascript')
+  const [lang, setLang] = useState<keyof typeof LANGS_SPIPPETS>('javascript')
 
-  const onMount = (editor) => {
+  const onMount = (editor: any) => {
     editorRef.current = editor
     editor.focus()
   }
 
-  const onSelect = (language) => {
+  const onSelect = (language: keyof typeof LANGS_SPIPPETS) => {
     setLang(language)
     setValue(LANGS_SPIPPETS[language])
   }
 
   return (
     <Box>
-      <HStack spacing={4}>
+      <HStack gap={4}>
         <Box w="50%">
           <LangMenu language={lang} onSelect={onSelect} />
           <Editor
@@ -32,7 +32,7 @@ const CodeEditor = () => {
             defaultValue={LANGS_SPIPPETS[lang]}
             value={value}
             onMount={onMount}
-            onChange={(value) => setValue(value)}
+            onChange={(value: any) => setValue(value)}
           />
         </Box>
         <Output editorRef={editorRef} lang={lang} />
